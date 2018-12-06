@@ -6,6 +6,7 @@
 - http://blog.woniper.net/328 (도커를 써야 하는 이유)
 - https://ho1234c.github.io/2017/01/31/2017-01-31-docker-nodejs/index.html
 - http://library.gabia.com/contents/infrahosting/2263 (서버 가상화 이유)
+- https://www.redhat.com/ko/topics/containers/whats-a-linux-container (리눅스 컨테이너)
 ---
 
 ### Docker 
