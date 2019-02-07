@@ -16,10 +16,47 @@
   - spring-context
   - spring-web
   - spring-webmvc
+```
+	<properties>
+		<org.springframework-version> 4.2.1.RELEASE </org.springframework-version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+	</dependencies>
+```
 
 ## Web.xml 설정 추가
 - DispatcherServlet
   - url / servlet 매핑
+```
+<servlet>
+    <servlet-name>spring</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/spring/servlet-context.xml</param-value>
+    </init-param>
+</servlet>
+<servlet-mapping>
+    <servlet-name>spring</servlet-name>
+    <url-pattern>*.do</url-pattern>
+</servlet-mapping>
+```
 
 ## servlet.xml 파일 생성
 - web.xml 에서 설정한 servlet-name 을 이용해서 xml 파일 생성
@@ -29,3 +66,10 @@
   - @Autowired 와 같은 어노테이션 활성화
 - <context:component-scan>
   - @Controller, @Service, @Configuration 와 같은 어노테이션을 스캔
+- jsp 뷰 리졸버
+```
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix" value="/WEB-INF/views/" />
+    <property name="suffix" value=".jsp" />
+</bean>
+```

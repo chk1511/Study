@@ -7,3 +7,7 @@
  Arrays.sort(arr);
 ```
 
+## ArrayList 정렬
+- 아직 테스트 해보지 않음
+- Collection.sort(array);
+- Collection.sort(array, Collection.reverseOrder()); 
