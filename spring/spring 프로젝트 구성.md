@@ -18,7 +18,7 @@
   - spring-webmvc
 ```
 	<properties>
-		<org.springframework-version> 4.2.1.RELEASE </org.springframework-version>
+		<org.springframework-version> 5.1.5.RELEASE </org.springframework-version>
 	</properties>
 	
 	<dependencies>
